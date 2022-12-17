@@ -1,0 +1,114 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Template is Working</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--&lt;!&ndash;# For 2 and 3&ndash;&gt;-->
+<!--&lt;!&ndash;Hey there, I am adarsh vajpayee.<br>&ndash;&gt;-->
+<!--&lt;!&ndash;{{  name  }} is from {{  place  }}.&ndash;&gt;-->
+
+<!--&lt;!&ndash;for 4 creating homepage of textutils website.&ndash;&gt;-->
+
+<!--<h1>Welcome to the text Analyzer.Enter Your Text Below</h1>-->
+<!--<form action='/analyse' method='get'>-->
+<!--   <textarea name='text' style="width: 721px;height: 93px;"></textarea>-->
+<!--    <br>-->
+<!--    <input type="checkbox" name="removepunc"> Removed Punctuations<br>-->
+<!--    <input type="checkbox" name="fullcaps"> UPPER CASE<br>-->
+<!--    <input type="checkbox" name="newlineremover"> New Line remover<br>-->
+<!--    <input type="checkbox" name="spaceremover"> Space remover<br>-->
+<!--    <input type="checkbox" name="extraspaceremover"> Extra Space remover<br>-->
+<!--    <button type="submit">Analyze Text</button>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+<!--ADDING BOOTSTRAP TO OUR DJANGO WEBSITE.-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Text Utilites.in</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">TextUtils</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#">
+            Contact Us
+          </a>
+        </li>
+<!--          <ul class="dropdown-menu">&ndash;&gt;-->
+<!--            <li><a class="dropdown-item" href="#">Action</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Another action</a></li>-->
+<!--            <li><hr class="dropdown-divider"></li>-->
+<!--            <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+<!--          </ul>         -->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link disabled">Disabled</a>-->
+<!--        </li>-->
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Welcome to Text Utils!</strong> You can do anything with your text here.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div class="container">
+  <form action="/analyse.html" method="post"> {% csrf_token %}
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Enter Your Text Here And Let Text Utils Do The Magic</label>
+  <textarea name ="text" class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
+</div>
+  <div class="form-check form-switch">
+  <input class="form-check-input"  name = "removepunc" type="checkbox" role="switch">
+  <label class="form-check-label">Remove Punctuations</label>
+</div>  <div class="form-check form-switch">
+  <input class="form-check-input"  name = "fullcaps" type="checkbox" role="switch">
+  <label class="form-check-label">UPPER CASE</label>
+</div>  <div class="form-check form-switch">
+  <input class="form-check-input"  name = "newlineremover" type="checkbox" role="switch">
+  <label class="form-check-label">New Line Remover</label>
+</div>  <div class="form-check form-switch">
+  <input class="form-check-input"  name = "spaceremover" type="checkbox" role="switch">
+  <label class="form-check-label" >Space Remover</label>
+</div>  <div class="form-check form-switch">
+  <input class="form-check-input"  name = "extraspaceremover" type="checkbox" role="switch">
+  <label class="form-check-label">Extra Space Remover</label>
+</div>
+  <button type="submit" class="btn btn-dark mt-2"><a href="analyse.html">Analyse Text</a></button>
+    </form>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>
+
